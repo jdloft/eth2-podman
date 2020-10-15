@@ -5,10 +5,10 @@ NAME=$1-validator-0-validator
 
 if ! podman ps | grep $NAME ; then
     if podman ps -a | grep $NAME ; then
-        podman rm $1-validator-0-validator
+        podman rm $NAME
     fi
     podman run \
-        --name $1-validator-0-validator \
+        --name $NAME \
         -v ./passwords/:/passwords:ro,Z \
         -v ./wallet/:/wallet:Z \
         -v ./db/:/db:Z \

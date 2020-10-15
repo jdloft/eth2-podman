@@ -1,5 +1,10 @@
 #!/bin/sh
 
+if [ -z "$1" ]; then
+    echo "No network provided"
+    exit 1
+fi
+
 cd ~/eth2/$1/validator/
 podman run \
     --name $1-import-keys \

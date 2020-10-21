@@ -12,5 +12,5 @@ podman run \
     -v ./wallet/:/wallet:Z \
     -v ./keys/:/keys:ro,Z \
     --net=none \
-    --rm gcr.io/prysmaticlabs/prysm/validator:latest accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet --wallet-password-file=/passwords/wallet-pass.txt --account-password-file=/passwords/account-pass.txt --$1
+    --rm gcr.io/prysmaticlabs/prysm/validator:latest accounts import --keys-dir=/keys --wallet-dir=/wallet --wallet-password-file=/passwords/wallet-pass.txt --account-password-file=/passwords/account-pass.txt --$1
 

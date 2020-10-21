@@ -18,7 +18,7 @@ if ! podman ps | grep $NAME ; then
         -v ./wallet/:/wallet:Z \
         -v ./db/:/db:Z \
         --net=$1 \
-        --rm -d gcr.io/prysmaticlabs/prysm/validator:latest --wallet-dir=/wallet --wallet-password-file=/passwords/wallet-pass.txt --datadir=/db --beacon-rpc-provider $1-node-0-node:4000 --monitoring-host=0.0.0.0 --$1 --graffiti=jdloft
+        --rm -d gcr.io/prysmaticlabs/prysm/validator:latest --accept-terms-of-use --wallet-dir=/wallet --wallet-password-file=/passwords/wallet-pass.txt --datadir=/db --beacon-rpc-provider $1-node-0-node:4000 --monitoring-host=0.0.0.0 --$1 --graffiti=jdloft
 fi
 podman logs -f $1-validator-0-validator
 

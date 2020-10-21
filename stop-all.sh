@@ -5,7 +5,13 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-podman stop $1-node-0-node
-podman stop $1-validator-0-validator
-podman stop $1-slasher-0-slasher
+function stop() {
+    if podman ps | grep $1 ; then
+        podman stop $1
+    fi
+}
+
+stop $1-node-0-node
+stop $1-validator-0-validator
+stop $1-slasher-0-slasher
 

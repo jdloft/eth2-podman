@@ -6,7 +6,7 @@ if [ -z "$1" ]; then
 fi
 
 cd ~/eth2/$1/slasher/
-NAME=$1-validator-0-validator
+NAME=$1-slasher-0-slasher
 
 if ! podman ps | grep $NAME ; then
     if podman ps -a | grep $NAME ; then

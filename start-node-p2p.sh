@@ -15,10 +15,10 @@ if ! podman ps | grep $NAME ; then
     podman run \
         --name $NAME \
         -v ./data/:/data:Z \
-        -p 0.0.0.0:$2:12000 \
-        -p 0.0.0.0:$3:13000 \
+        -p 0.0.0.0:$2:$2 \
+        -p 0.0.0.0:$3:$3 \
         --net=$1 \
-        --rm -d gcr.io/prysmaticlabs/prysm/beacon-chain:latest --accept-terms-of-use --datadir=/data --rpc-host=0.0.0.0 --grpc-gateway-host=0.0.0.0 --monitoring-host=0.0.0.0 --http-web3provider=https://goerli.prylabs.net --$1 --p2p-host-ip=$(curl -s v4.ident.me)
+        --rm -d gcr.io/prysmaticlabs/prysm/beacon-chain:latest --accept-terms-of-use --datadir=/data --rpc-host=0.0.0.0 --grpc-gateway-host=0.0.0.0 --monitoring-host=0.0.0.0 --http-web3provider=https://goerli.prylabs.net --$1 --p2p-host-ip=$(curl -s v4.ident.me) --p2p-udp-port $2 --p2p-tcp-port $3
 fi
 podman logs -f $1-node-0-node
 

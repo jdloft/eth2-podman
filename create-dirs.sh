@@ -5,5 +5,5 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-mkdir -p eth2/$1/{node/db,validator/passwords,validator/wallet,validator/db}
+mkdir -p eth2/$1/{node/data,validator/passwords,validator/wallet,validator/db}
 

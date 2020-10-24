@@ -5,7 +5,7 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-cd ~/eth2/$1/validator/
+cd eth2/$1/validator/
 podman run \
     --name $1-import-keys \
     -v ./passwords/:/passwords:ro,Z \

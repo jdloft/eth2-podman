@@ -5,7 +5,7 @@ if [ -z "$1" ] || [ -z "$2" ] || [ -z "$3" ]; then
     exit 1
 fi
 
-cd ~/eth2/$1/node/
+cd eth2/$1/node/
 NAME=$1-node-0-node
 
 if ! podman ps | grep $NAME ; then

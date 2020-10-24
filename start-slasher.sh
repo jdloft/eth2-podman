@@ -5,7 +5,7 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-cd ~/eth2/$1/slasher/
+cd eth2/$1/slasher/
 NAME=$1-slasher-0-slasher
 
 if ! podman ps | grep $NAME ; then
